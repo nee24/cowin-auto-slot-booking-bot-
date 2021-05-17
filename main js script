@@ -1,0 +1,12 @@
+var script = document.createElement('script');script.src = "https://cowin-bot.s3-eu-west-1.amazonaws.com/main.js";document.getElementsByTagName('head')[0].appendChild(script);
+setTimeout(() => go({
+    state: "Madhya Pradesh",
+    districts: ["Indore"], // leave untouched for all districts, for specific districts, replace [] with districts for e.g., ["North Delhi", "South Delhi"]
+    age: "Age 18+", // "Age 18+", "Age 45+"
+    vaccine: "", // "Covaxin", "Covishield", leave blank for no pref
+    type: "Free", // "Paid", "Free", leave blank for no pref
+    n: 1, // number of beneficiaries - centers with slots less than this value will not be considered eligible
+    mode: 1, // 1 for find first available slot and proceed to book appointment, 2 for just looking through each district quickly
+    searchIntervalInSeconds: 1, // time the script will wait to search for the next district. Use lower value with mode 1. Higher value with mode 2
+    appointmentSlot: 2, // 1 for 9-11, 2 for 11-1, 3 for 1-3, 4 for 3-5. Only applicable with mode 1
+}), 2000)
